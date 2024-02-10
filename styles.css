@@ -1,0 +1,212 @@
+/* General Styles */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 400;
+}
+
+
+/* Fonts */
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('fonts/JosefinSans-ExtraLight.ttf');
+    font-weight: 100;
+}
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('fonts/JosefinSans-Light.ttf');
+    font-weight: 200;
+}
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('fonts/JosefinSans-Thin.ttf');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('fonts/JosefinSans-Regular.ttf');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('fonts/JosefinSans-Italic.ttf');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('fonts/JosefinSans-Medium.ttf');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('fonts/JosefinSans-SemiBold.ttf');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('fonts/JosefinSans-Bold.ttf');
+    font-weight: 700;
+}
+
+
+
+
+/* -- Body Styles -- */
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fafafa;
+}
+
+/* Header image */
+.headerImg {
+    width: 100%;
+    height: 350px;
+    background-image: url(images/header.png);
+    background-size: cover;
+    background-position: center;
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+}
+
+/* Header elements */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 540px;
+    margin-top: 80px;
+    margin-bottom: 46px;
+
+    h1 {
+        color: #FFF;
+        font-family: "Josefin Sans";
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 15px;
+    }
+
+    .lightModeToggleBtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 32px;
+        padding: 4px;
+        border-radius: 24px;
+        
+        img {
+            width: 23.3px;
+            height: 24px;
+        }
+    }
+    .lightModeToggleBtn:hover {
+        background-color: rgba(255, 255, 255, 0.20);
+    }
+}
+
+/* Task input container */
+.taskInput {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    width: 540px;
+    padding: 18px 24px;
+    border-radius: 5px;
+    background-color: #FFF;
+    box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.50);
+
+    .input {
+        width: 100%;
+        height: 32px;
+        border: none;
+        font-size: 18px;
+    }
+    .input:active {
+        border-color: transparent;
+    }
+    
+    .addBtn {
+        width: 22px;
+        height: 22px;
+        padding: 4px;
+        border-radius: 4px;
+    }
+    .addBtn:hover {
+        background: rgba(0, 0, 0, 0.10);
+
+    }
+    .addBtn:hover img {
+        fill: linear-gradient(0deg, #8B83EB 0%, #8B83EB 100%), #9495A5;
+    }
+}
+
+/* Tasks list container */
+.tasksList {
+    width: 540px;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 24px;
+    box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.50);
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        width: 100%;
+        list-style-type: none;
+
+        li {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+            gap: 12px;
+            padding: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+            #checkBox {
+                cursor: pointer;
+            }
+
+            .trash {
+                margin-left: auto;
+                padding: 4px;
+                max-width: 24px;
+                max-height: 24px;
+                display: none;
+                cursor: pointer;
+            }
+        }
+        li:hover {
+            background-color: rgba(0, 0, 0, 0.03);
+
+            .trash {
+                display: flex;
+            }
+        }
+        li.done {
+            text-decoration: line-through;
+            color: #d1d2da;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+    }
+}
